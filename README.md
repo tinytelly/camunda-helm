@@ -1,2 +1,2 @@
 # camunda-helm
-camunda managed via helm and K8s
+camunda managed via helm and K8s.
