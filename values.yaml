@@ -5,7 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: tinytelly/hello-world
+  tag: latest
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -31,8 +32,10 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port: 80
+  externalPort: 8005
+  internalPort: 80
 
 ingress:
   enabled: false
