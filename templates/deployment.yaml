@@ -31,6 +31,15 @@ spec:
             - name: http
               containerPort: {{ required "applicationPort " .Values.applicationPort  }}
               protocol: TCP
+          env:
+            - name: DB_URL
+              value: jdbc:postgresql://{{ .Release.Name }}-postgresql:5432/{{ required "postgresql.postgresqlDatabase " .Values.postgresql.postgresqlDatabase  }}
+            - name: DB_USERNAME
+              value: {{ required "postgresql.postgresqlUsername " .Values.postgresql.postgresqlUsername  }}
+            - name: DB_PASSWORD
+              value: {{ required "postgresql.postgresqlPassword " .Values.postgresql.postgresqlPassword  }}
+            - name: DB_DRIVER
+              value: org.postgresql.Driver
           livenessProbe:
             httpGet:
               path: {{ required "livenessPath" .Values.livenessPath  }}
