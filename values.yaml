@@ -43,7 +43,7 @@ securityContext: {}
 
 service:
   type: LoadBalancer
-  port: 80
+  port: 8080
   externalPort: 8080
   internalPort: 8080
 
