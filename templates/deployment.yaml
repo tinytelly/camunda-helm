@@ -29,16 +29,23 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: {{ required "applicationPort " .Values.applicationPort  }}
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
-              port: http
+              path: {{ required "livenessPath" .Values.livenessPath  }}
+              port: {{  required "applicationPort " .Values.applicationPort  }}
+              initialDelaySeconds: {{  required "livenessDelay " .Values.livenessDelay  }}
+              timeoutSeconds: {{  required "livenessTimeout " .Values.livenessTimeout  }}
+              periodSeconds: {{  required "livenessPeriod " .Values.livenessPeriod  }}
+              failureThreshold: {{  required "livenessFailureThreshold  " .Values.livenessFailureThreshold   }}
           readinessProbe:
             httpGet:
-              path: /
-              port: http
+              path: {{ required "readinessPath" .Values.readinessPath   }}
+              port: {{  required "applicationPort" .Values.applicationPort  }}
+            initialDelaySeconds: {{  required "readinessDelay " .Values.readinessDelay  }}
+            timeoutSeconds: {{  required "readinessTimeout " .Values.readinessTimeout  }}
+            periodSeconds: {{  required "readinessPeriod " .Values.readinessPeriod  }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

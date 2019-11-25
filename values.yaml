@@ -7,6 +7,17 @@ replicaCount: 1
 image:
   repository: camunda/camunda-bpm-platform
   pullPolicy: IfNotPresent
+  
+applicationPort: 8080
+readinessPath: '/engine-rest/version'
+readinessDelay: 30
+readinessTimeout: 3
+readinessPeriod: 15
+livenessPath: '/engine-rest/version'
+livenessDelay: 30
+livenessTimeout: 3
+livenessPeriod: 15
+livenessFailureThreshold: 3
 
 imagePullSecrets: []
 nameOverride: ""
