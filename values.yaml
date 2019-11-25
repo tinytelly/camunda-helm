@@ -10,11 +10,11 @@ image:
   
 applicationPort: 8080
 readinessPath: '/engine-rest/version'
-readinessDelay: 30
+readinessDelay: 60
 readinessTimeout: 3
 readinessPeriod: 15
 livenessPath: '/engine-rest/version'
-livenessDelay: 30
+livenessDelay: 60
 livenessTimeout: 3
 livenessPeriod: 15
 livenessFailureThreshold: 3
