@@ -6,7 +6,6 @@ replicaCount: 1
 
 image:
   repository: tinytelly/hello-world
-  tag: latest
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
