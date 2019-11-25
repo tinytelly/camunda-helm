@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: tinytelly/hello-world
+  repository: camunda/camunda-bpm-platform
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -33,8 +33,8 @@ securityContext: {}
 service:
   type: LoadBalancer
   port: 80
-  externalPort: 8005
-  internalPort: 80
+  externalPort: 8080
+  internalPort: 8080
 
 ingress:
   enabled: false
