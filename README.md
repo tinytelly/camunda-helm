@@ -7,7 +7,7 @@ cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Secret
 metadata:
-  name: mysecret
+  name: camunda-database-credentials
 type: Opaque
 data:
   password: $(echo -n "camunda" | base64 -w0)

@@ -37,10 +37,12 @@ spec:
             - name: DB_USERNAME-Z
               valueFrom:
                 secretKeyRef:
-                  name: mysecret
+                  name: camunda-database-credentials
                   key: username
             - name: DB_PASSWORD-Z
-              value: {{ required "postgresql.postgresqlPassword " .Values.postgresql.postgresqlPassword  }}
+              secretKeyRef:
+                  name: camunda-database-credentials
+                  key: password
             - name: DB_DRIVER-Z
               value: org.postgresql.Driver
           livenessProbe:

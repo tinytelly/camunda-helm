@@ -20,8 +20,6 @@ livenessPeriod: 15
 livenessFailureThreshold: 3
 
 postgresql:
-  postgresqlUsername: "camunda"
-  postgresqlPassword: "camunda"
   postgresqlDatabase: "camunda"
 
 imagePullSecrets: []
