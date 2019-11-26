@@ -5,3 +5,4 @@ FROM postgres:10.4-alpine
 #   https://github.com/camunda-consulting/docker-camunda-platform/blob/master/postgres-camunda-ee/Dockerfile
 
 COPY *.sql /docker-entrypoint-initdb.d/
+RUN chmod -R 777 /docker-entrypoint-initdb.d
