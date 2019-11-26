@@ -4,6 +4,9 @@
 
 replicaCount: 1
 
+camunda:
+  name: camunda
+
 image:
   repository: camunda/camunda-bpm-platform
   pullPolicy: IfNotPresent
@@ -19,7 +22,9 @@ livenessTimeout: 3
 livenessPeriod: 15
 livenessFailureThreshold: 3
 
+
 postgresql:
+  name: postgresql
   postgresqlDatabase: "camunda"
   replicaCount: 1
   repository: tinytelly/camunda-ee-postgresql

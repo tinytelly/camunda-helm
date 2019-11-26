@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "camunda-helm.fullname" . }}
+  name: {{ .Values.camunda.name  }}
   labels:
     {{- include "camunda-helm.labels" . | nindent 4 }}
 spec:
@@ -81,7 +81,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "camunda-helm.fullname" . }}
+  name: {{ .Values.postgresql.name  }}
   labels:
     {{- include "camunda-helm.labels" . | nindent 4 }}
 spec:
