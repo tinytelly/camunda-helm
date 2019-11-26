@@ -32,18 +32,18 @@ spec:
               containerPort: {{ required "applicationPort " .Values.applicationPort  }}
               protocol: TCP
           env:
-            - name: DB_URL-Z
+            - name: DB_URL-X
               value: jdbc:postgresql://{{ .Release.Name }}-postgresql:5432/{{ required "postgresql.postgresqlDatabase " .Values.postgresql.postgresqlDatabase  }}
-            - name: DB_USERNAME-Z
+            - name: DB_USERNAME-X
               valueFrom:
                 secretKeyRef:
                   name: camunda-database-credentials
                   key: username
-            - name: DB_PASSWORD-Z
+            - name: DB_PASSWORD-X
               secretKeyRef:
                   name: camunda-database-credentials
                   key: password
-            - name: DB_DRIVER-Z
+            - name: DB_DRIVER-X
               value: org.postgresql.Driver
           livenessProbe:
             httpGet:
