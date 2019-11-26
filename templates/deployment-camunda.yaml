@@ -37,7 +37,7 @@ spec:
             - name: DB_USERNAME-Z
               valueFrom:
                 secretKeyRef:
-                  name: db-user-pass
+                  name: mysecret
                   key: username
             - name: DB_PASSWORD-Z
               value: {{ required "postgresql.postgresqlPassword " .Values.postgresql.postgresqlPassword  }}
