@@ -29,7 +29,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: {{ required "applicationPort " .Values.applicationPort  }}
+              containerPort: {{ .Values.camunda.applicationPort }}
               protocol: TCP
           env:
             - name: DB_URL-X
@@ -48,7 +48,7 @@ spec:
           livenessProbe:
             httpGet:
               path: {{ required "livenessPath" .Values.livenessPath  }}
-              port: {{  required "applicationPort " .Values.applicationPort  }}
+              port: {{ .Values.camunda.applicationPort }}
             initialDelaySeconds: {{  required "livenessDelay " .Values.livenessDelay  }}
             timeoutSeconds: {{  required "livenessTimeout " .Values.livenessTimeout  }}
             periodSeconds: {{  required "livenessPeriod " .Values.livenessPeriod  }}
@@ -56,7 +56,7 @@ spec:
           readinessProbe:
             httpGet:
               path: {{ required "readinessPath" .Values.readinessPath   }}
-              port: {{  required "applicationPort" .Values.applicationPort  }}
+              port: {{ .Values.camunda.applicationPort }}
             initialDelaySeconds: {{  required "readinessDelay " .Values.readinessDelay  }}
             timeoutSeconds: {{  required "readinessTimeout " .Values.readinessTimeout  }}
             periodSeconds: {{  required "readinessPeriod " .Values.readinessPeriod  }}

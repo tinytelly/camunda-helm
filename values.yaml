@@ -6,6 +6,7 @@ replicaCount: 1
 
 camunda:
   name: camunda
+  applicationPort: 8080
   service:
     type: LoadBalancer
     port: 80
@@ -16,7 +17,7 @@ image:
   repository: camunda/camunda-bpm-platform
   pullPolicy: IfNotPresent
   
-applicationPort: 8080
+
 readinessPath: '/engine-rest/version'
 readinessDelay: 60
 readinessTimeout: 3
