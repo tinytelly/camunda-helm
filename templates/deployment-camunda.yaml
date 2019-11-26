@@ -35,7 +35,10 @@ spec:
             - name: DB_URL-Z
               value: jdbc:postgresql://{{ .Release.Name }}-postgresql:5432/{{ required "postgresql.postgresqlDatabase " .Values.postgresql.postgresqlDatabase  }}
             - name: DB_USERNAME-Z
-              value: {{ required "postgresql.postgresqlUsername " .Values.postgresql.postgresqlUsername  }}
+              valueFrom:
+                secretKeyRef:
+                  name: db-user-pass
+                  key: username
             - name: DB_PASSWORD-Z
               value: {{ required "postgresql.postgresqlPassword " .Values.postgresql.postgresqlPassword  }}
             - name: DB_DRIVER-Z
