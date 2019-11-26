@@ -19,12 +19,8 @@ spec:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       serviceAccountName: {{ include "camunda-helm.serviceAccountName" . }}
-      securityContext:
-        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.postgresql.repository }}:{{ .Values.postgresql.version }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
