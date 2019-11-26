@@ -21,6 +21,10 @@ livenessFailureThreshold: 3
 
 postgresql:
   postgresqlDatabase: "camunda"
+  replicaCount: 1
+  repository: tinytelly/camunda-ee-postgresql
+  version: latest
+  applicationPort: 5432
 
 imagePullSecrets: []
 nameOverride: ""
