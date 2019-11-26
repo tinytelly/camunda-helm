@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ include "camunda-helm.fullname" . }}-test-connection"
+  name: "{{ .Values.camunda.name }}-test-connection"
   labels:
 {{ include "camunda-helm.labels" . | nindent 4 }}
   annotations:
@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args:  ['{{ include "camunda-helm.fullname" . }}:{{ .Values.service.port }}']
+      args:  ['{{ .Values.camunda.name }}:{{ .Values.camunda.service.port }}']
   restartPolicy: Never

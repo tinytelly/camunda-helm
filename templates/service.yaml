@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "camunda-helm.fullname" . }}
+  name: {{ .Values.camunda.name }}
   labels:
     {{- include "camunda-helm.labels" . | nindent 4 }}
 spec:
-  type: {{ .Values.service.type }}
+  type: {{ .Values.camunda.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
+    - port: {{ .Values.camunda.service.port }}
       targetPort: http
       protocol: TCP
       name: http
