@@ -35,12 +35,12 @@ postgresql:
   replicaCount: 1
   repository: tinytelly/camunda-ee-postgresql
   version: 0.0.1
-  applicationPort: 5433
+  applicationPort: 5432
   service:
-    type: LoadBalancer
-    port: 5433
-    externalPort: 5433
-    internalPort: 5433
+    type: ClusterIP
+    port: 5432
+    externalPort: 5432
+    internalPort: 5432
 
 imagePullSecrets: []
 nameOverride: ""
