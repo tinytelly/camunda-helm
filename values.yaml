@@ -36,6 +36,11 @@ postgresql:
   repository: tinytelly/camunda-ee-postgresql
   version: 0.0.1
   applicationPort: 5432
+  service:
+    type: LoadBalancer
+    port: 5432
+    externalPort: 5432
+    internalPort: 5432
 
 imagePullSecrets: []
 nameOverride: ""
