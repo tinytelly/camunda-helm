@@ -33,7 +33,7 @@ spec:
               protocol: TCP
           env:
             - name: DB_URL
-              value: jdbc:postgresql://{{ .Values.postgresql.name }}-service:5432/{{ required "postgresql.postgresqlDatabase " .Values.postgresql.postgresqlDatabase  }}
+              value: jdbc:postgresql://{{ .Values.postgresql.name }}-service:{{ .Values.postgresql.applicationPort }}/{{ required "postgresql.postgresqlDatabase " .Values.postgresql.postgresqlDatabase  }}
             - name: DB_USERNAME
               valueFrom:
                 secretKeyRef:
