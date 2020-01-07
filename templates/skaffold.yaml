@@ -1,0 +1,6 @@
+build:
+  artifacts:
+  - image: camunda-ee-postgresql
+    context: ./postgres
+  local:
+    push: false

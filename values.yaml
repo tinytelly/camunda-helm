@@ -33,7 +33,7 @@ postgresql:
   name: postgresql
   postgresqlDatabase: "camunda"
   replicaCount: 1
-  repository: tinytelly/camunda-ee-postgresql
+  repository: camunda-ee-postgresql
   version: 0.0.1
   applicationPort: 5432
   service:
