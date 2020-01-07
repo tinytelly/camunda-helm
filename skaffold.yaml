@@ -1,6 +1,9 @@
 apiVersion: skaffold/v2alpha1
 kind: Config
 build:
+  tagPolicy:
+    envTemplate:
+      template: "{{.IMAGE_NAME}}:0.0.1"
   artifacts:
   - image: camunda-ee-postgresql
     context: ./postgres
