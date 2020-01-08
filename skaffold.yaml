@@ -5,7 +5,7 @@ build:
     envTemplate:
       template: "{{.IMAGE_NAME}}:0.0.1"
   artifacts:
-  - image: camunda-ee-postgresql
+  - image: tinytelly/camunda-ee-postgresql
     context: ./build/postgres/image
 test:
   - image: camunda-ee-postgresql
