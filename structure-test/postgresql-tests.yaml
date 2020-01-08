@@ -4,3 +4,7 @@ fileExistenceTests:
   - name: 'check postgresql binary'
     path: '/var/lib/postgresql'
     shouldExist: true
+commandTests:
+  - name: 'check that we can start postgresql'
+    command: 'ps -ef'
+    expectedOutput: ['.*postgres*']
