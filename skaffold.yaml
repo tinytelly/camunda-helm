@@ -13,3 +13,10 @@ test:
   - image: camunda-ee-postgresql
     structureTests:
       - './build/postgres/postgresql-tests.yaml'
+deploy:
+  helm:
+    releases:
+    - name: skaffold-helm
+      chartPath: ./deploy
+      values:
+        image: camunda-ee-postgresql      
