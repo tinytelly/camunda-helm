@@ -7,5 +7,6 @@ fileExistenceTests:
 commandTests:
   - name: 'check that we can start postgresql'
     setup: [["docker-entrypoint.sh"]]
-    command: 'postgres'
+    command: 'ps'
+    args: ["-ef"]
     expectedOutput: ['.*postgres*']
