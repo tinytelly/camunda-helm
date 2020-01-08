@@ -3,7 +3,7 @@ kind: Config
 build:
   tagPolicy:
     envTemplate:
-      template: "{{.IMAGE_NAME}}:0.0.1"
+      template: "base:tag"
   artifacts:
   - image: camunda-ee-postgresql
     context: ./build/postgres/image
@@ -19,4 +19,4 @@ deploy:
     - name: camunda-helm
       chartPath: ./camunda-helm
       values:
-        image: camunda-ee-postgresql:0.0.1      
+        image: camunda-ee-postgresql      
