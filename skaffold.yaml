@@ -3,12 +3,10 @@ kind: Config
 build:
   tagPolicy:
     envTemplate:
-      template: "base:tag"
+      template: "{{.IMAGE_NAME}}:0.0.1"
   artifacts:
   - image: camunda-ee-postgresql
     context: ./build/postgres/image
-  local:
-    push: false
 test:
   - image: camunda-ee-postgresql
     structureTests:
