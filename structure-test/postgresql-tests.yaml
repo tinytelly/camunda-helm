@@ -1,11 +1,10 @@
 schemaVersion: '2.0.0'
 
-fileExistenceTests:
-  - name: 'no go binary'
-    path: '/usr/bin/go'
-    shouldExist: false
-    
 fileExistenceTests2:
   - name: 'no go binary2'
+    path: '/usr/bin/go'
+    shouldExist: false
+fileExistenceTests:
+  - name: 'no go binary'
     path: '/usr/bin/go'
     shouldExist: false
