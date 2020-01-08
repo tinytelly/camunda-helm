@@ -26,12 +26,12 @@ livenessTimeout: 3
 livenessPeriod: 15
 livenessFailureThreshold: 3
 
+image: "camunda-ee-postgresql:0.0.1"
 
 postgresql:
   name: postgresql
   postgresqlDatabase: "camunda"
   replicaCount: 1
-  image: "camunda-ee-postgresql:0.0.1"
   applicationPort: 5432
   service:
     type: ClusterIP

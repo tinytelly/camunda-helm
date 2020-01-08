@@ -20,5 +20,4 @@ deploy:
       chartPath: ./camunda-helm
       skipBuildDependencies: false
       values:
-        postgresql:
-          image: camunda-ee-postgresql      
+        image: camunda-ee-postgresql      

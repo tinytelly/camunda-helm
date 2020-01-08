@@ -101,7 +101,7 @@ spec:
       serviceAccountName: {{ include "camunda-helm.serviceAccountName" . }}
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.postgresql.image }}"
+          image: "{{ .Values.image }}"
           imagePullPolicy: {{ .Values.camunda.image.pullPolicy }}
           ports:
             - name: http
