@@ -1,4 +1,4 @@
-FROM postgres:10.4-alpine
+FROM postgres:latest
 # Camunda BPM 7.10.x is supported on PostgreSQL 10.4
 # See also: 
 #   https://docs.camunda.org/manual/latest/introduction/supported-environments/
