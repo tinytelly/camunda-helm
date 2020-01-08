@@ -1,6 +1,6 @@
 schemaVersion: 2.0.0
 
 fileExistenceTests:
-  - name: 'no go binary'
-    path: '/usr/bin/go'
-    shouldExist: false
+  - name: 'check postgresql binary'
+    path: '/var/lib/postgresql'
+    shouldExist: true
