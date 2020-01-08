@@ -7,4 +7,4 @@ fileExistenceTests:
 fileExistenceTests2:
   - name: 'no go binary2'
     path: '/usr/bin/go'
-    shouldExist: false    
+    shouldExist: false
