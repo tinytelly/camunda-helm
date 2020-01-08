@@ -4,3 +4,9 @@ fileExistenceTests:
   - name: 'check postgresql binary'
     path: '/var/lib/postgresql'
     shouldExist: true
+commandTests:
+  - name: 'check that we can start postgresql'
+    setup: [["docker-entrypoint.sh"]]
+    command: 'ps'
+    args: ["-ef"]
+    expectedOutput: ['.*postgres*']
