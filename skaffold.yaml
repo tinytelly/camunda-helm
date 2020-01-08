@@ -16,8 +16,8 @@ test:
 deploy:
   helm:
     releases:
-    - name: skaffold-helm
+    - name: camunda-helm
       chartPath: ./camunda-helm
-      skipBuildDependencies: true
+      skipBuildDependencies: false
       values:
         image: camunda-ee-postgresql      
