@@ -8,7 +8,7 @@ build:
   - image: tinytelly/camunda-ee-postgresql
     context: ./build/postgres/image
 test:
-  - image: camunda-ee-postgresql
+  - image: tinytelly/camunda-ee-postgresql
     structureTests:
       - './build/postgres/postgresql-tests.yaml'
 deploy:
@@ -17,4 +17,4 @@ deploy:
     - name: camunda-helm
       chartPath: ./camunda-helm
       values:
-        image: camunda-ee-postgresql      
+        image: tinytelly/camunda-ee-postgresql      
