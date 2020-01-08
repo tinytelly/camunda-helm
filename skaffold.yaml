@@ -10,6 +10,6 @@ build:
   local:
     push: false
 test:
-  - image: "{{.IMAGE_NAME}}"
+  - image: camunda-ee-postgresql
     structureTests:
       - './structure-test/postgresql-tests.yaml'
