@@ -21,5 +21,4 @@ deploy:
       skipBuildDependencies: false
       values:
         postgresql:
-          repository: camunda-ee-postgresql
-          version: 0.0.1      
+          image: camunda-ee-postgresql      
