@@ -6,5 +6,6 @@ fileExistenceTests:
     shouldExist: true
 commandTests:
   - name: 'check that we can start postgresql'
-    command: 'ps -ef'
+    command: 'ps'
+    args: ["-ef"]
     expectedOutput: ['.*postgres*']
