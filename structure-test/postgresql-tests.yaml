@@ -3,8 +3,3 @@ postgresqlInstalledTest:
   - name: 'check postgresql binary'
     path: '/var/lib/postgresql'
     shouldExist: true
-startUpTest:
-  - name: 'check that we can start postgresql'
-    command: 'docker run -it --rm camunda-ee-postgresql:0.0.1'
-    excludedError: ['.*ERROR.*']
-    expectedOutput: ['.*database system is ready to accept connections.*']  
