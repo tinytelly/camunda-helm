@@ -1,6 +1,6 @@
 schemaVersion: '2.0.0'
 
-fileExistenceTests2:
+commandTests:
   - name: 'no go binary2'
     path: '/usr/bin/go'
     shouldExist: false
