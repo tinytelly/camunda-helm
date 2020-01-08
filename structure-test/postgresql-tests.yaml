@@ -1,10 +1,11 @@
-schemaVersion: '2.0.0'
+schemaVersion: 2.0.0
 
-commandTests:
-  - name: 'no go binary2'
-    path: '/usr/bin/go'
-    shouldExist: false
 fileExistenceTests:
-  - name: 'no go binary'
-    path: '/usr/bin/go'
-    shouldExist: false
+  - name: 'check postgresql binary'
+    path: '/var/lib/postgresql'
+    shouldExist: true
+commandTests:
+  - name: 'check that we can start postgresql'
+    command: 'docker run -it --rm camunda-ee-postgresql:0.0.1'
+    excludedError: ['.*ERROR.*']
+    expectedOutput: ['.*database system is ready to accept connections.*']
