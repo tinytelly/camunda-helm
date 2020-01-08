@@ -9,7 +9,7 @@ build:
     context: ./postgres
   local:
     push: false
-  test:
-    - image: "{{.IMAGE_NAME}}:0.0.1"
-    structureTests:
-      - './structure-test/postgresql-tests.yaml'
+test:
+  - image: "{{.IMAGE_NAME}}:0.0.1"
+  structureTests:
+    - './structure-test/postgresql-tests.yaml'
