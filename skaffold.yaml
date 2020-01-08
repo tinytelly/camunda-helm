@@ -22,5 +22,4 @@ deploy:
       values:
         postgresql:
           repository: camunda-ee-postgresql
-        postgresql:
           version: 0.0.1      
