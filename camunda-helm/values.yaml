@@ -12,9 +12,9 @@ camunda:
     port: 80
     externalPort: 8080
     internalPort: 8080
-    image:
-      repository: camunda/camunda-bpm-platform
-      pullPolicy: IfNotPresent
+  image:
+    repository: camunda/camunda-bpm-platform
+    pullPolicy: IfNotPresent
 
 readinessPath: '/engine-rest/version'
 readinessDelay: 60
