@@ -1,5 +1,4 @@
 schemaVersion: 2.0.0
-
 postgresqlInstalledTest:
   - name: 'check postgresql binary'
     path: '/var/lib/postgresql'
